@@ -8,8 +8,8 @@ export const sendEmail = async ({ email, type, req }) => {
 
   const transporter = nodemailer.createTransport({
     service: "gmail",
-    tls:{
-      rejectUnauthorized:false,
+    tls: {
+      rejectUnauthorized: false,
     },
     auth: {
       user: process.env.USER_GMAIL,
@@ -18,8 +18,8 @@ export const sendEmail = async ({ email, type, req }) => {
   });
 
   const token = jwt.sign({ email }, process.env.JWT_SECRET_FORGET_PASS)
-  let test = htmlCode(token, req)
-  if (type == 'forgetPassword') test = htmlChangePass / (token, req)
+  let test = htmlCode({ token: token, req: req })
+  if (type == 'forgetPassword') test = htmlChangePass / ({ token: token, req: req })
   const info = await transporter.sendMail({
     from: `"E-commerce App" <${process.env.USER_GMAIL}>`, // sender address
     to: email, // list of receivers
