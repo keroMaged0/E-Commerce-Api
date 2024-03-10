@@ -142,7 +142,7 @@ const forgetPassword = catchError(
         if (toString(user.email) !== toString(email)) return next(new appError('not found email please try agin', 404))
 
         // send email
-        sendEmail(email, 'forgetPassword')
+        sendEmail({ email: email, type: 'forgetPassword', req: req })
 
         res.json({ success: true, message: "password reset link sent to your email" })
     }

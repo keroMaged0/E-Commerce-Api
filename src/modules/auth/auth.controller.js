@@ -24,7 +24,7 @@ const SignUp = catchError(
         if (userExist) return next(new appError(' email already exit Please try another email ', 404))
 
         // verify email
-        sendEmail(email)
+        sendEmail({ email: email, req: req })
 
         // create user object
         const user = new userModel(
@@ -70,6 +70,8 @@ const SignIn = catchError(
 
             return res.status(200).json({ success: true, message: "SingIn successfully", data: token })
         }
+        console.log('sign in successfully');
+
         res.status(401).json({ success: false, message: "!not valid email or password pleas try again" })
     }
 )

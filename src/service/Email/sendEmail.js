@@ -4,7 +4,7 @@ import { htmlCode } from "./email.template.js";
 import { htmlChangePass } from "./chang_password.template.js";
 
 
-export const sendEmail = async (email, type) => {
+export const sendEmail = async ({ email, type, req }) => {
 
   const transporter = nodemailer.createTransport({
     service: "gmail",
@@ -16,8 +16,8 @@ export const sendEmail = async (email, type) => {
   });
 
   const token = jwt.sign({ email }, process.env.JWT_SECRET_FORGET_PASS)
-  let test = htmlCode(token)
-  if (type == 'forgetPassword') test = htmlChangePass/(token)
+  let test = htmlCode(token, req)
+  if (type == 'forgetPassword') test = htmlChangePass / (token, req)
   const info = await transporter.sendMail({
     from: `"E-commerce App" <${process.env.USER_GMAIL}>`, // sender address
     to: email, // list of receivers
