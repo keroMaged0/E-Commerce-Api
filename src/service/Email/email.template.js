@@ -1,7 +1,6 @@
 
 export const htmlCode = (token, req) => {
 	return `
-	${console.log(req)}
     <!-- © 2018 Shift Technologies. All rights reserved. -->
 <table border="0" cellpadding="0" cellspacing="0" width="100%" style="table-layout:fixed;background-color:#f9f9f9" id="bodyTable">
 	<tbody>
