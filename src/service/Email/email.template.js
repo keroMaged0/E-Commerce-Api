@@ -97,7 +97,7 @@ export const  htmlCode = (token) => {
 																</table>
 															</td>
 														</tr>
-													</tbody>
+													</tbody> 
 												</table>
 											</td>
 										</tr>
