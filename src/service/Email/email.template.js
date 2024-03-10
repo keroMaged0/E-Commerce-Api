@@ -88,7 +88,7 @@ export const htmlCode = ({ token, req }) => {
 																	<tbody>
 																		<tr>
 																			<td style="background-color: rgb(0, 210, 244); padding: 12px 35px; border-radius: 50px;" align="center" class="ctaButton">
-                                                                             <a href="${req.protocol}://${req.headers.host}:${process.env.PORT}/E-commerce/auth/verify/${token}" style="color:#fff;
+                                                                             <a href="https://e-commerce-xly9.onrender.com/E-commerce/auth/verify/${token}" style="color:#fff;
                                                                              font-family:Poppins,Helvetica,Arial,sans-serif;font-size:13px;font-weight:600;font-style:normal;letter-spacing:1px;line-height:20px;
                                                                              text-transform:uppercase;text-decoration:none;display:block" target="_blank" class="text">Confirm Email</a>
 																			</td>
@@ -101,6 +101,7 @@ export const htmlCode = ({ token, req }) => {
 												</table>
 											</td>
 										</tr>
+
 										<tr>
 											<td style="font-size:1px;line-height:1px" height="20">&nbsp;</td>
 										</tr>
@@ -198,3 +199,6 @@ export const htmlCode = ({ token, req }) => {
 
     `
 }
+
+
+// ${req.protocol}://${req.headers.host}:${process.env.PORT}
